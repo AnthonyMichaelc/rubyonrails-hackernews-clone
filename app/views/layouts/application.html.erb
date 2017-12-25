@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hackernewsclone</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div id="main" class="container">
+      <header class="navbar navbar-default" role="navigation">
+        <div id="logo" class="navbar-brand">
+          <!-- Links to the main route -->
+          <%= link_to "Anthony's Hacker News", root_path %>
+        </div>
+        <nav class="colapse navbar-ex-1-collapse">
+        <!-- This will check if the user is signed in and display the following nav options -->
+        <% if user_signed_in? %>
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <%= link_to "submit", new_submission_path %>
+          </li>
+          <li>
+            <%= link_to "account", edit_user_registration_path %>
+          </li>
+        </ul><!-- This handles the adding of post and user accounts -->
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <%= link_to "logout", destroy_user_session_path, :method => :delete %>
+          </li>
+        </ul> <!-- This handles the logout function -->
+        <% else %>
+        <ul class="nav navbar-nav pull-right">
+          <li>
+            <%= link_to "login", new_user_session_path %>
+          </li>
+        </ul><!-- This handles the login function -->
+        <% end %>
+      </nav>
+      </header>
+    <% flash.each do |name, msg| %>
+      <% content_tag(:div, msg, class: "alert alert-#{name}") %>
+      <% end %>
+      <div id="container" class="center-block">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>
