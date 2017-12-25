@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Cloning of Hacker News looking submission site build off of Ruby On Rails
 
-Things you may want to cover:
 
-* Ruby version
+# Comments
 
-* System dependencies
+<img width="1124" alt="comment" src="https://user-images.githubusercontent.com/13970615/34341947-7a843984-e970-11e7-9f5e-7ca1a0e67782.png">
 
-* Configuration
+# Login
 
-* Database creation
+<img width="1122" alt="login" src="https://user-images.githubusercontent.com/13970615/34341948-7a8ee848-e970-11e7-867a-db4213678ea1.png">
 
-* Database initialization
+# Submission Index
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<img width="1247" alt="list_submissions" src="https://user-images.githubusercontent.com/13970615/34341949-7a991840-e970-11e7-97de-855a307ca7e4.png">
